@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0e6e6d; -webkit-text-stroke: #0e6e6d}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4d5055; -webkit-text-stroke: #4d5055}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #18702b; -webkit-text-stroke: #18702b}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6f0ec3; -webkit-text-stroke: #6f0ec3}
+    span.s1 {font-kerning: none; color: #6f0ec3; background-color: #ecf1f7; -webkit-text-stroke: 0px #6f0ec3}
+    span.s2 {font-kerning: none; background-color: #ecf1f7}
+    span.s3 {font-kerning: none; color: #0e6e6d; background-color: #ecf1f7; -webkit-text-stroke: 0px #0e6e6d}
+    span.s4 {font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
+    span.s5 {font-kerning: none; color: #000000; background-color: #ecf1f7; -webkit-text-stroke: 0px #000000}
+    span.s6 {font-kerning: none}
+    span.s7 {font-kerning: none; color: #a4450b; background-color: #ecf1f7; -webkit-text-stroke: 0px #a4450b}
+    span.s8 {font-kerning: none; color: #bf1c25; background-color: #ecf1f7; -webkit-text-stroke: 0px #bf1c25}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">import</span><span class="s2"> </span><span class="s3">React</span><span class="s2">, { useState } </span><span class="s1">from</span><span class="s2"> </span><span class="s4">'react'</span><span class="s2">;</span></p>
+<p class="p2"><span class="s1">import</span><span class="s5"> { </span><span class="s2">Mail</span><span class="s5">, </span><span class="s2">Phone</span><span class="s5">, </span><span class="s2">MapPin</span><span class="s5">, </span><span class="s2">User</span><span class="s5">, </span><span class="s2">Code</span><span class="s5">, </span><span class="s2">GraduationCap</span><span class="s5">, </span><span class="s2">Camera</span><span class="s5">, </span><span class="s2">Youtube</span><span class="s5">, </span><span class="s2">Smartphone</span><span class="s5"> } </span><span class="s1">from</span><span class="s5"> </span><span class="s4">'lucide-react'</span><span class="s5">;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p1"><span class="s1">const</span><span class="s2"> </span><span class="s3">App</span><span class="s2"> = () =&gt; {</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s2">// Video data with IDs for display</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">const</span><span class="s2"> videos = [</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'6d9bzUnskKI'</span><span class="s2">, title: </span><span class="s4">'Work 01'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'Vcbch2dCl98'</span><span class="s2">, title: </span><span class="s4">'Work 02'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'Q2y8drU8t38'</span><span class="s2">, title: </span><span class="s4">'Work 03'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'S455i-V3qSc'</span><span class="s2">, title: </span><span class="s4">'Work 04'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'LRA89U2Lppc'</span><span class="s2">, title: </span><span class="s4">'Work 05'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'TuR3FKJiwSY'</span><span class="s2">, title: </span><span class="s4">'Work 06'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'bHpi0m4H8n8'</span><span class="s2">, title: </span><span class="s4">'Work 07'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'CYyJA54YZzY'</span><span class="s2">, title: </span><span class="s4">'Work 08'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'Qymdg4iVWnc'</span><span class="s2">, title: </span><span class="s4">'Work 09'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'1XNmjKr-dBs'</span><span class="s2">, title: </span><span class="s4">'Work 10'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'QDKMYwzmc6c'</span><span class="s2">, title: </span><span class="s4">'Work 11'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>{ id: </span><span class="s4">'og7ePoQ33QI'</span><span class="s2">, title: </span><span class="s4">'Work 12'</span><span class="s2"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span>];</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s2">// Glassmorphism and UI classes</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s1">const</span><span class="s5"> glassCard = </span><span class="s2">"bg-white bg-opacity-5 backdrop-blur-xl border border-white border-opacity-10 rounded-3xl shadow-2xl"</span><span class="s5">;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s1">const</span><span class="s5"> liquidButton = </span><span class="s2">"bg-opacity-10 bg-white backdrop-blur-md border border-white border-opacity-20 hover:border-opacity-40 transition-all duration-300 rounded-full px-6 py-2 flex items-center gap-2 text-[#ececec]"</span><span class="s5">;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">const</span><span class="s2"> accentText = </span><span class="s4">"text-[#5ee765]"</span><span class="s2">;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">const</span><span class="s2"> primaryText = </span><span class="s4">"text-[#ececec]"</span><span class="s2">;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s2">return</span><span class="s5"> (</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span>&lt;div className=</span><span class="s2">"min-h-screen bg-[#0a0a0a] font-sans selection:bg-[#5ee765] selection:text-black"</span><span class="s5">&gt;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Navigation */</span><span class="s5">}</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">      </span>&lt;nav className=</span><span class="s2">"fixed top-0 w-full z-50 p-4"</span><span class="s5">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span>&lt;div className={</span><span class="s2">`max-w-6xl mx-auto </span><span class="s5">${glassCard}</span><span class="s2"> py-4 px-8 flex justify-between items-center`</span><span class="s5">}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div className={</span><span class="s4">`text-xl font-bold tracking-tighter </span><span class="s2">${accentText}</span><span class="s4">`</span><span class="s2">}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">RAKIBUL</span><span class="s2"> &lt;span className={primaryText}&gt;</span><span class="s3">MALITHYA</span><span class="s2">&lt;/span&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">          </span>&lt;div className=</span><span class="s2">"hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest text-[#ececec]"</span><span class="s5">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;a href=</span><span class="s2">"#about"</span><span class="s5"> className=</span><span class="s2">"hover:text-[#5ee765] transition-colors"</span><span class="s5">&gt;</span><span class="s3">About</span><span class="s5">&lt;/a&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;a href=</span><span class="s2">"#portfolio"</span><span class="s5"> className=</span><span class="s2">"hover:text-[#5ee765] transition-colors"</span><span class="s5">&gt;</span><span class="s3">Portfolio</span><span class="s5">&lt;/a&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;a href=</span><span class="s2">"#experience"</span><span class="s5"> className=</span><span class="s2">"hover:text-[#5ee765] transition-colors"</span><span class="s5">&gt;</span><span class="s3">Experience</span><span class="s5">&lt;/a&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;a href=</span><span class="s2">"#contact"</span><span class="s5"> className=</span><span class="s2">"hover:text-[#5ee765] transition-colors"</span><span class="s5">&gt;</span><span class="s3">Contact</span><span class="s5">&lt;/a&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Hero Section */</span><span class="s5">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;section className=</span><span class="s4">"pt-32 pb-20 px-4"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span>&lt;div className=</span><span class="s2">"max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;h2 className={</span><span class="s2">`</span><span class="s5">${accentText}</span><span class="s2"> font-medium mb-4 uppercase tracking-widest text-sm`</span><span class="s5">}&gt;</span><span class="s3">Video</span><span class="s5"> </span><span class="s3">Editor</span><span class="s5"> &amp; </span><span class="s3">Creative</span><span class="s5"> </span><span class="s3">Professional</span><span class="s5">&lt;/h2&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;h1 className={</span><span class="s2">`text-5xl md:text-7xl font-bold </span><span class="s5">${primaryText}</span><span class="s2"> mb-6 leading-tight`</span><span class="s5">}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s3">Crafting</span><span class="s2"> </span><span class="s3">Stories</span><span class="s2"> &lt;br /&gt; </span><span class="s3">Through</span><span class="s2"> &lt;span className={accentText}&gt;</span><span class="s3">Motion</span><span class="s2">.&lt;/span&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/h1&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;p className=</span><span class="s2">"text-gray-400 text-lg mb-8 max-w-md"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s3">High</span><span class="s2">-end video editing, motion graphics, and sound design. </span><span class="s3">Bringing</span><span class="s2"> visions to life </span><span class="s1">with</span><span class="s2"> professional precision and </span><span class="s3">AI</span><span class="s2">-enhanced workflows.</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;div className=</span><span class="s4">"flex gap-4"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>&lt;a href=</span><span class="s2">"#portfolio"</span><span class="s5"> className={</span><span class="s2">`</span><span class="s5">${liquidButton}</span><span class="s2"> bg-[#5ee765] text-black font-bold border-none`</span><span class="s5">}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">View</span><span class="s2"> </span><span class="s3">My</span><span class="s2"> </span><span class="s3">Work</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;a href=</span><span class="s4">"mailto:vdoadtr@gmail.com"</span><span class="s2"> className={liquidButton}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">Let</span><span class="s4">'s Talk</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">          </span>&lt;div className={</span><span class="s2">`</span><span class="s5">${glassCard}</span><span class="s2"> p-4 aspect-[4/5] relative overflow-hidden group`</span><span class="s5">}&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">             </span>&lt;div className=</span><span class="s2">"absolute inset-0 bg-gradient-to-tr from-[#5ee76522] to-transparent pointer-events-none"</span><span class="s5"> /&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">             </span>&lt;div className=</span><span class="s2">"flex flex-col h-full justify-center items-center text-center p-8"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">               </span>&lt;</span><span class="s3">Camera</span><span class="s2"> size={</span><span class="s7">64</span><span class="s2">} className={</span><span class="s4">`</span><span class="s2">${accentText}</span><span class="s4"> mb-6 opacity-50`</span><span class="s2">} /&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">               </span>&lt;p className={</span><span class="s2">`</span><span class="s5">${primaryText}</span><span class="s2"> text-xl italic`</span><span class="s5">}&gt;</span><span class="s2">"Every frame tells a story, every cut defines the rhythm."</span><span class="s5">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">             </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Portfolio Section */</span><span class="s5">}</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">      </span>&lt;section id=</span><span class="s2">"portfolio"</span><span class="s5"> className=</span><span class="s2">"py-20 px-4 bg-[#0f0f0f]"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div className=</span><span class="s4">"max-w-6xl mx-auto"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">          </span>&lt;div className=</span><span class="s2">"flex flex-col md:flex-row justify-between items-end mb-12 gap-4"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;h2 className={</span><span class="s4">`text-4xl font-bold </span><span class="s2">${primaryText}</span><span class="s4"> mb-2`</span><span class="s2">}&gt;</span><span class="s3">Portfolio</span><span class="s2">&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;div className={</span><span class="s4">`h-1 w-20 bg-[#5ee765]`</span><span class="s2">} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;p className=</span><span class="s4">"text-gray-500 max-w-sm"</span><span class="s2">&gt;</span><span class="s3">A</span><span class="s2"> collection </span><span class="s1">of</span><span class="s2"> my recent creative works and short-form edits </span><span class="s1">with</span><span class="s2"> auto-play enabled.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">          </span>&lt;div className=</span><span class="s2">"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>{videos.map((vid) =&gt; (</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>&lt;div key={vid.id} className={</span><span class="s2">`</span><span class="s5">${glassCard}</span><span class="s2"> overflow-hidden group hover:scale-[1.02] transition-transform duration-500`</span><span class="s5">}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;div className=</span><span class="s4">"aspect-[4/5] w-full relative"</span><span class="s2">&gt;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">                  </span>{</span><span class="s2">/* Embedded YouTube shorts with Autoplay and Mute (required for autoplay) */</span><span class="s5">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;iframe<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>className=</span><span class="s4">"w-full h-full"</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                    </span>src={</span><span class="s2">`https://www.youtube.com/embed/</span><span class="s5">${vid.id}</span><span class="s2">?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=</span><span class="s5">${vid.id}</span><span class="s2">&amp;modestbranding=1&amp;rel=0`</span><span class="s5">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>title={vid.title}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>frameBorder=</span><span class="s4">"0"</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                    </span>allow=</span><span class="s2">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>allowFullScreen</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&gt;&lt;/iframe&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                </span>&lt;div className=</span><span class="s2">"p-4 flex justify-between items-center bg-black bg-opacity-20 backdrop-blur-md"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;span className={</span><span class="s4">`</span><span class="s2">${primaryText}</span><span class="s4"> font-medium`</span><span class="s2">}&gt;{vid.title}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;</span><span class="s3">Youtube</span><span class="s2"> size={</span><span class="s7">18</span><span class="s2">} className={accentText} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>))}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* About &amp; Technical Skills */</span><span class="s5">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;section id=</span><span class="s4">"about"</span><span class="s2"> className=</span><span class="s4">"py-20 px-4"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span>&lt;div className=</span><span class="s2">"max-w-6xl mx-auto grid md:grid-cols-2 gap-16"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div className={glassCard + </span><span class="s4">" p-8"</span><span class="s2">}&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;div className=</span><span class="s2">"flex items-center gap-3 mb-6"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;</span><span class="s3">User</span><span class="s2"> className={accentText} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;h3 className={</span><span class="s4">`text-2xl font-bold </span><span class="s2">${primaryText}</span><span class="s4">`</span><span class="s2">}&gt;</span><span class="s3">About</span><span class="s2"> </span><span class="s3">Me</span><span class="s2">&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;p className=</span><span class="s2">"text-gray-400 leading-relaxed mb-6"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s3">I</span><span class="s2"> am a highly skilled video editor </span><span class="s1">with</span><span class="s2"> a passion </span><span class="s1">for</span><span class="s2"> storytelling and visual creativity. </span><span class="s3">My</span><span class="s2"> expertise spans various areas including crafting compelling short films, dynamic motion graphics, and mastering sound design and color grading.</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/p&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;p className=</span><span class="s2">"text-gray-400 leading-relaxed"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span></span><span class="s3">Deep</span><span class="s2"> understanding </span><span class="s1">of</span><span class="s2"> camera fundamentals: </span><span class="s3">Exposure</span><span class="s2">, </span><span class="s3">Shutter</span><span class="s2"> </span><span class="s3">Speed</span><span class="s2">, </span><span class="s3">ISO</span><span class="s2">, and </span><span class="s3">Focal</span><span class="s2"> </span><span class="s3">Length</span><span class="s2">. </span><span class="s3">I</span><span class="s2"> approach every project </span><span class="s1">with</span><span class="s2"> a comprehensive creative vision.</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/p&gt;</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">            </span></span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;div className=</span><span class="s2">"mt-8 grid grid-cols-2 gap-4"</span><span class="s5">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">               </span>&lt;div className=</span><span class="s2">"p-4 rounded-2xl bg-white bg-opacity-5"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                 </span>&lt;h4 className={accentText + </span><span class="s4">" font-bold mb-1"</span><span class="s2">}&gt;</span><span class="s7">100</span><span class="s2">%&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                 </span>&lt;p className=</span><span class="s4">"text-xs text-gray-500 uppercase"</span><span class="s2">&gt;</span><span class="s3">Commitment</span><span class="s2">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">               </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">               </span>&lt;div className=</span><span class="s2">"p-4 rounded-2xl bg-white bg-opacity-5"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                 </span>&lt;h4 className={accentText + </span><span class="s4">" font-bold mb-1"</span><span class="s2">}&gt;</span><span class="s3">Pro</span><span class="s2"> </span><span class="s3">Level</span><span class="s2">&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                 </span>&lt;p className=</span><span class="s4">"text-xs text-gray-500 uppercase"</span><span class="s2">&gt;</span><span class="s3">Visuals</span><span class="s2">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">               </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div className={glassCard + </span><span class="s4">" p-8"</span><span class="s2">}&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;div className=</span><span class="s2">"flex items-center gap-3 mb-6"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;</span><span class="s3">Code</span><span class="s2"> className={accentText} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;h3 className={</span><span class="s4">`text-2xl font-bold </span><span class="s2">${primaryText}</span><span class="s4">`</span><span class="s2">}&gt;</span><span class="s3">Technical</span><span class="s2"> </span><span class="s3">Arsenal</span><span class="s2">&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;div className=</span><span class="s4">"flex flex-wrap gap-2"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>{[</span><span class="s2">'Premiere Pro'</span><span class="s5">, </span><span class="s2">'After Effects'</span><span class="s5">, </span><span class="s2">'Photoshop'</span><span class="s5">, </span><span class="s2">'Pixelmator Pro'</span><span class="s5">, </span><span class="s2">'Adobe Audition'</span><span class="s5">, </span><span class="s2">'Color Grading'</span><span class="s5">, </span><span class="s2">'Sound Design'</span><span class="s5">, </span><span class="s2">'Motion Graphics'</span><span class="s5">, </span><span class="s2">'AI Content Gen'</span><span class="s5">, </span><span class="s2">'Scripting'</span><span class="s5">].map(skill =&gt; (</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                </span>&lt;span key={skill} className=</span><span class="s2">"px-4 py-2 rounded-full bg-white bg-opacity-5 border border-white border-opacity-10 text-sm text-[#ececec]"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>{skill}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/span&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>))}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span>&lt;div className=</span><span class="s2">"mt-8 border-t border-white border-opacity-10 pt-6"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;h4 className={</span><span class="s4">`</span><span class="s2">${primaryText}</span><span class="s4"> font-bold mb-4 flex items-center gap-2`</span><span class="s2">}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s3">Smartphone</span><span class="s2"> size={</span><span class="s7">18</span><span class="s2">} className={accentText} /&gt; </span><span class="s3">AI</span><span class="s2"> </span><span class="s3">Workflow</span><span class="s2"> </span><span class="s3">Integration</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/h4&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>&lt;p className=</span><span class="s2">"text-gray-400 text-sm italic"</span><span class="s5">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s2">"Every problem solved with AI. Expression code and scripts for After Effects drastically help my workflow."</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Experience Section */</span><span class="s5">}</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">      </span>&lt;section id=</span><span class="s2">"experience"</span><span class="s5"> className=</span><span class="s2">"py-20 px-4 bg-[#0f0f0f]"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div className=</span><span class="s4">"max-w-6xl mx-auto"</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div className=</span><span class="s4">"mb-12"</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;h2 className={</span><span class="s4">`text-4xl font-bold </span><span class="s2">${primaryText}</span><span class="s4"> mb-2`</span><span class="s2">}&gt;</span><span class="s3">Work</span><span class="s2"> </span><span class="s3">History</span><span class="s2">&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>&lt;div className={</span><span class="s4">`h-1 w-20 bg-[#5ee765]`</span><span class="s2">} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div className=</span><span class="s4">"space-y-6"</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>{[</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>{ company: </span><span class="s2">'Globyad Agency'</span><span class="s5">, role: </span><span class="s2">'Video Editor'</span><span class="s5">, date: </span><span class="s2">'Jan 2026 – Present'</span><span class="s5">, desc: </span><span class="s2">'Promotional videos and social media ad creatives using AE &amp; Pixelmator Pro.'</span><span class="s5"> },</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>{ company: </span><span class="s2">'Our Voice'</span><span class="s5">, role: </span><span class="s2">'Video Editor'</span><span class="s5">, date: </span><span class="s2">'Apr 2025 – Dec 2025'</span><span class="s5">, desc: </span><span class="s2">'Managed internal/external content workflows and post-production.'</span><span class="s5"> },</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>{ company: </span><span class="s2">'TARA NEWS'</span><span class="s5">, role: </span><span class="s2">'Video Editor'</span><span class="s5">, date: </span><span class="s2">'Jun 2024 – Nov 2024'</span><span class="s5">, desc: </span><span class="s2">'Daily news editing and broadcast-ready formatting.'</span><span class="s5"> },</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>{ company: </span><span class="s2">'TDN Bangla'</span><span class="s5">, role: </span><span class="s2">'Video Editor'</span><span class="s5">, date: </span><span class="s2">'Nov 2022 – Apr 2024'</span><span class="s5">, desc: </span><span class="s2">'News reports, interviews, and documentary-style videos.'</span><span class="s5"> },</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>].map((exp, idx) =&gt; (</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>&lt;div key={idx} className={</span><span class="s2">`</span><span class="s5">${glassCard}</span><span class="s2"> p-8 flex flex-col md:flex-row md:items-center justify-between group hover:bg-white hover:bg-opacity-10 transition-all duration-300`</span><span class="s5">}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;h4 className={</span><span class="s4">`</span><span class="s2">${accentText}</span><span class="s4"> text-sm font-bold uppercase mb-1`</span><span class="s2">}&gt;{exp.date}&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;h3 className={</span><span class="s4">`</span><span class="s2">${primaryText}</span><span class="s4"> text-xl font-bold`</span><span class="s2">}&gt;{exp.role}&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;p className=</span><span class="s4">"text-gray-500 font-medium"</span><span class="s2">&gt;{exp.company}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                </span>&lt;p className=</span><span class="s2">"text-gray-400 md:max-w-md mt-4 md:mt-0 leading-relaxed"</span><span class="s5">&gt;{exp.desc}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>))}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Contact Section */</span><span class="s5">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;section id=</span><span class="s4">"contact"</span><span class="s2"> className=</span><span class="s4">"py-20 px-4"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span>&lt;div className=</span><span class="s2">"max-w-6xl mx-auto grid md:grid-cols-2 gap-12"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">           </span>&lt;div className={glassCard + </span><span class="s4">" p-8"</span><span class="s2">}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;div className=</span><span class="s4">"flex items-center gap-3 mb-8"</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s3">GraduationCap</span><span class="s2"> className={accentText} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;h3 className={</span><span class="s4">`text-2xl font-bold </span><span class="s2">${primaryText}</span><span class="s4">`</span><span class="s2">}&gt;</span><span class="s3">Education</span><span class="s2">&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;div className=</span><span class="s4">"space-y-8"</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;h4 className={</span><span class="s4">`</span><span class="s2">${primaryText}</span><span class="s4"> font-bold text-lg`</span><span class="s2">}&gt;</span><span class="s3">M</span><span class="s2">.</span><span class="s3">A</span><span class="s2">. </span><span class="s1">in</span><span class="s2"> </span><span class="s3">Mass</span><span class="s2"> </span><span class="s3">Communication</span><span class="s2">&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;p className=</span><span class="s4">"text-sm text-gray-500"</span><span class="s2">&gt;</span><span class="s3">Harichand</span><span class="s2"> </span><span class="s3">Guruchand</span><span class="s2"> </span><span class="s3">University</span><span class="s2"> | </span><span class="s7">2025</span><span class="s2"> - </span><span class="s3">Present</span><span class="s2">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                </span>&lt;div className=</span><span class="s2">"h-px bg-white bg-opacity-10 w-full"</span><span class="s5"> /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;h4 className={</span><span class="s4">`</span><span class="s2">${primaryText}</span><span class="s4"> font-bold text-lg`</span><span class="s2">}&gt;</span><span class="s3">B</span><span class="s2">.</span><span class="s3">Voc</span><span class="s2"> </span><span class="s1">in</span><span class="s2"> </span><span class="s3">Broadcast</span><span class="s2"> </span><span class="s3">Journalism</span><span class="s2">&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;p className=</span><span class="s4">"text-sm text-gray-500"</span><span class="s2">&gt;</span><span class="s3">Derozio</span><span class="s2"> </span><span class="s3">Memorial</span><span class="s2"> </span><span class="s3">College</span><span class="s2"> | </span><span class="s7">2022</span><span class="s2"> - </span><span class="s7">2025</span><span class="s2">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">           </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">           </span>&lt;div className={glassCard + </span><span class="s4">" p-8 relative overflow-hidden"</span><span class="s2">}&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">              </span>&lt;div className=</span><span class="s2">"absolute top-0 right-0 p-8 opacity-10"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s3">Mail</span><span class="s2"> size={</span><span class="s7">120</span><span class="s2">} className={accentText} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;h3 className={</span><span class="s4">`text-2xl font-bold </span><span class="s2">${primaryText}</span><span class="s4"> mb-8`</span><span class="s2">}&gt;</span><span class="s3">Get</span><span class="s2"> </span><span class="s3">In</span><span class="s2"> </span><span class="s3">Touch</span><span class="s2">&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;div className=</span><span class="s4">"space-y-6 relative z-10"</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;div className=</span><span class="s4">"flex items-center gap-4"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                  </span>&lt;div className=</span><span class="s2">"p-3 rounded-full bg-white bg-opacity-5 text-[#5ee765]"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s3">Phone</span><span class="s2"> size={</span><span class="s7">20</span><span class="s2">} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                    </span>&lt;p className=</span><span class="s2">"text-xs text-gray-500 uppercase font-bold"</span><span class="s5">&gt;</span><span class="s3">Call</span><span class="s5"> </span><span class="s3">Me</span><span class="s5">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;p className={primaryText}&gt;+</span><span class="s7">91</span><span class="s2"> </span><span class="s7">9531661985</span><span class="s2">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;div className=</span><span class="s4">"flex items-center gap-4"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                  </span>&lt;div className=</span><span class="s2">"p-3 rounded-full bg-white bg-opacity-5 text-[#5ee765]"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s3">Mail</span><span class="s2"> size={</span><span class="s7">20</span><span class="s2">} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                    </span>&lt;p className=</span><span class="s2">"text-xs text-gray-500 uppercase font-bold"</span><span class="s5">&gt;</span><span class="s3">Email</span><span class="s5">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;p className={primaryText}&gt;vdoadtr</span><span class="s8">@</span><span class="s2">gmail.com&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;div className=</span><span class="s4">"flex items-center gap-4"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                  </span>&lt;div className=</span><span class="s2">"p-3 rounded-full bg-white bg-opacity-5 text-[#5ee765]"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s3">MapPin</span><span class="s2"> size={</span><span class="s7">20</span><span class="s2">} /&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;div&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                    </span>&lt;p className=</span><span class="s2">"text-xs text-gray-500 uppercase font-bold"</span><span class="s5">&gt;</span><span class="s3">Address</span><span class="s5">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;p className={primaryText}&gt;</span><span class="s3">Rajarhat</span><span class="s2"> </span><span class="s3">New</span><span class="s2"> </span><span class="s3">Town</span><span class="s2">, </span><span class="s3">Kolkata</span><span class="s2"> </span><span class="s7">700135</span><span class="s2">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">              </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;div className=</span><span class="s4">"mt-12"</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                </span>&lt;button className={liquidButton + </span><span class="s2">" w-full justify-center py-4 bg-[#5ee765] text-black font-bold border-none hover:shadow-[0_0_20px_#5ee76544]"</span><span class="s5">}&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span></span><span class="s3">Connect</span><span class="s2"> </span><span class="s3">Now</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">           </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Footer */</span><span class="s5">}</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">      </span>&lt;footer className=</span><span class="s2">"py-10 border-t border-white border-opacity-5 px-4 text-center"</span><span class="s5">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span>&lt;p className=</span><span class="s2">"text-gray-600 text-sm"</span><span class="s5">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s8">©</span><span class="s2"> {</span><span class="s1">new</span><span class="s2"> </span><span class="s3">Date</span><span class="s2">().getFullYear()} </span><span class="s3">RAKIBUL</span><span class="s2"> </span><span class="s3">MALITHYA</span><span class="s2">. </span><span class="s3">Built</span><span class="s2"> </span><span class="s1">for</span><span class="s2"> </span><span class="s3">Impact</span><span class="s2">.</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/footer&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span>);</span></p>
+<p class="p1"><span class="s2">};</span></p>
+<p class="p3"><span class="s6"></span><br></p>
+<p class="p6"><span class="s2">export</span><span class="s5"> </span><span class="s2">default</span><span class="s5"> </span><span class="s3">App</span><span class="s5">;</span></p>
+</body>
+</html>
