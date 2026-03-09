@@ -298,13 +298,14 @@
     </footer>
 
     <script>
-        // Updated Video IDs (Corrected index 3 for the short link provided)
         const videoIds = [
             '6d9bzUnskKI', 'Vcbch2dCl98', 'Q2y8drU8t38', 
             'S455i-V3qSc', 'LRA89U2Lppc', 'TuR3FKJiwSY', 
             'bHpi0m4H8n8', 'CYyJA54YZzY', 'Qymdg4iVWnc', 
             '1XNmjKr-dBs', 'QDKMYwzmc6c', 'og7ePoQ33QI'
         ];
+
+        let activeUnmutedId = null;
 
         function openModal(id) {
             const modal = document.getElementById('video-modal');
@@ -325,10 +326,11 @@
         const grid = document.getElementById('video-grid');
         videoIds.forEach((id, index) => {
             const card = document.createElement('div');
+            card.id = `card-${id}`;
             card.className = 'glass-card overflow-hidden group hover:scale-[1.03] transition-all duration-500 relative';
             
             card.innerHTML = `
-                <div class="unmute-btn" onclick="event.stopPropagation(); unmuteVideo(this, '${id}')" title="Unmute Sound">
+                <div class="unmute-btn" id="btn-${id}" onclick="event.stopPropagation(); unmuteVideo('${id}')" title="Unmute Sound">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
                 </div>
                 <div class="video-overlay" onclick="openModal('${id}')"></div>
@@ -351,10 +353,28 @@
             grid.appendChild(card);
         });
 
-        function unmuteVideo(btn, id) {
-            const iframe = document.getElementById(`iframe-${id}`);
-            iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=0&loop=1&playlist=${id}&modestbranding=1&controls=1`;
-            btn.style.display = 'none';
+        function unmuteVideo(id) {
+            // If there's already an active unmuted video, mute it first
+            if (activeUnmutedId && activeUnmutedId !== id) {
+                const prevIframe = document.getElementById(`iframe-${activeUnmutedId}`);
+                const prevBtn = document.getElementById(`btn-${activeUnmutedId}`);
+                if (prevIframe) {
+                    // Reset previous iframe to muted state
+                    prevIframe.src = `https://www.youtube.com/embed/${activeUnmutedId}?autoplay=1&mute=1&loop=1&playlist=${activeUnmutedId}&modestbranding=1&controls=0`;
+                }
+                if (prevBtn) {
+                    prevBtn.style.display = 'block'; // Show unmute button again for previous video
+                }
+            }
+
+            // Unmute the current video
+            const currentIframe = document.getElementById(`iframe-${id}`);
+            const currentBtn = document.getElementById(`btn-${id}`);
+            
+            currentIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=0&loop=1&playlist=${id}&modestbranding=1&controls=1`;
+            currentBtn.style.display = 'none'; // Hide current button
+            
+            activeUnmutedId = id; // Track current unmuted video
         }
     </script>
 </body>
